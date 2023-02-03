@@ -36,5 +36,14 @@ namespace UnitTesting.MLApiConnector
             Assert.NotNull(response);
             Assert.Equal(HttpStatusCode.OK, response.StatusCode);
         }
+
+        [Fact]
+        public void ShouldRefreshToken()
+        {
+            var response = _authResource.GetRefreshToken("clientid", "clientSecret", "tokentorefresh");
+
+            Assert.NotNull(response);
+            Assert.Equal(HttpStatusCode.OK, response.StatusCode);
+        }
     }
 }
