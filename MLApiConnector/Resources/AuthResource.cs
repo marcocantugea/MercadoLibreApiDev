@@ -24,7 +24,7 @@ namespace MLApiConnector.Resources
             _client = new RestClient(clientOptions);
         }
 
-        public AuthResource(RestClient client,string baseResources, string resouces, int timeOut=5000)
+        public AuthResource(string baseResources, string resouces, int timeOut=5000)
         {
             _client = new RestClient();
             this.baseResources = baseResources;
