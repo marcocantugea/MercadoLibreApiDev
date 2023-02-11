@@ -19,7 +19,9 @@
 
   <ItemGroup>
     <ProjectReference Include="..\DataEF\DataEF.csproj" />
-    <ProjectReference Include="..\MLApiConnector\MLApiConnector.csproj" />
+    <ProjectReference Include="..\MLApi.DTO\MLApi.DTO.csproj" />
+    <ProjectReference Include="..\MLApiContractors\MLApiContractors.csproj" />
+    <ProjectReference Include="..\MLApiServices\MLApiServices.csproj" />
   </ItemGroup>
 
 </Project>

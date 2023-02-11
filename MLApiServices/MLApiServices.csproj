@@ -9,6 +9,7 @@
   <ItemGroup>
     <ProjectReference Include="..\DataEF\DataEF.csproj" />
     <ProjectReference Include="..\MLApiConnector\MLApiConnector.csproj" />
+    <ProjectReference Include="..\MLApiContractors\MLApiContractors.csproj" />
   </ItemGroup>
 
 </Project>
