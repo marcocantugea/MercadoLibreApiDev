@@ -112,5 +112,27 @@ namespace UnitTesting.Services
             _context.Update(mlcode);
             _context.SaveChanges();
         }
+
+        [Fact]
+        public async void ShouldGetAuthLink_Success()
+        {
+            await _service.SaveClientAndSecretConfigurations("test", "testclientsecret");
+            var clientid=_context.GlobalConfigurations.Where(gc=>gc.Name== "CLIENT_ID").Select(gc=>gc.Value).FirstOrDefault();
+            var link=await _service.GetAuthLink("test");
+            Assert.Equal($"https://auth.mercadolibre.com.mx/authorization?response_type=code&client_id={clientid}&redirect_uri=test",link);
+        }
+
+
+        [Fact]
+        public async void ShouldGetAuthLink_Fail_ClientIdNotFound()
+        {
+            var clientidObj = _context.GlobalConfigurations.Where(gc => gc.Name == "CLIENT_ID").FirstOrDefault();
+            clientidObj.Value = string.Empty;
+            _context.Update(clientidObj);
+            _context.SaveChanges();
+
+            var exception = await Assert.ThrowsAsync<Exception>(async () => await _service.GetAuthLink("test"));
+            Assert.Equal("client id not found", exception.Message);
+        }
     }
 }

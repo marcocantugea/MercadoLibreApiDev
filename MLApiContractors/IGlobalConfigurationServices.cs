@@ -12,5 +12,6 @@ namespace MLApiContractors
     {
         Task SaveClientAndSecretConfigurations(string clientId, string clientSecret);
         Task SaveCode(string tcode);
+        Task<string> GetAuthLink(string redirectUrl);
     }
 }
