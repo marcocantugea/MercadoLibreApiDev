@@ -1,4 +1,5 @@
-﻿using RestSharp;
+﻿using MLApiConnector.Contractors;
+using RestSharp;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace MLApiConnector.Resources
 {
-    public class AuthResource
+    public class AuthResource: IAuthResource
     {
         private RestClient _client;
         private string baseResources = "https://api.mercadolibre.com";

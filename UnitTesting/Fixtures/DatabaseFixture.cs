@@ -13,7 +13,7 @@ namespace UnitTesting.Fixtures
         private readonly MLApiDbContext _context;
         public DatabaseFixture() {
           
-            _context = new MLApiDbContext(new DbContextOptionsBuilder<MLApiDbContext>().UseInMemoryDatabase(databaseName: "MLApiDb").Options);
+            _context = new MLApiDbContext(new DbContextOptionsBuilder<MLApiDbContext>().UseInMemoryDatabase(databaseName: "MLApiDb", b => b.EnableNullChecks(false)).Options);
             _context.Database.EnsureCreated();
         }
 

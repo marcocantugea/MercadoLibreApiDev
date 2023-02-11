@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
+using MLApi.DTO;
 
 namespace MLApiContractors
 {
@@ -13,5 +14,8 @@ namespace MLApiContractors
         Task SaveClientAndSecretConfigurations(string clientId, string clientSecret);
         Task SaveCode(string tcode);
         Task<string> GetAuthLink(string redirectUrl);
+        Task SaveTokenInfo(string accessToken, int expireIn, int userId, string RefreshToken);
+        Task<TokenInfoDTO> GetAuthToken();
+        Task<TokenInfoDTO> RefreshToken();
     }
 }

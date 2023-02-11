@@ -60,5 +60,34 @@ namespace MercadoLibreApiDev.Controllers
                 return StatusCode(500,ex.Message);
             }
         }
+
+        [HttpGet("token")]
+        public async Task<ActionResult<string>> GetAuthToken()
+        {
+            try
+            {
+                var link = await _service.GetAuthToken();
+                return Ok(link);
+            }
+            catch (Exception ex)
+            {
+
+                return StatusCode(500, ex.Message);
+            }
+        }
+        [HttpGet("refreshtoken")]
+        public async Task<ActionResult<string>> GetRefreshedToken()
+        {
+            try
+            {
+                var link = await _service.RefreshToken();
+                return Ok(link);
+            }
+            catch (Exception ex)
+            {
+
+                return StatusCode(500, ex.Message);
+            }
+        }
     }
 }
