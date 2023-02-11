@@ -18,6 +18,24 @@ namespace MLApiServices
             _context = context;
         }
 
+        public async Task<string> GetAuthLink(string redirectUrl)
+        {
+            try
+            {
+                var clientid=_context.GlobalConfigurations.Where(gc => gc.Name == "CLIENT_ID").Select(gc => gc.Value).FirstOrDefault();
+
+                if (string.IsNullOrEmpty(clientid)) throw new Exception("client id not found");
+
+                return $"https://auth.mercadolibre.com.mx/authorization?response_type=code&client_id={clientid}&redirect_uri={redirectUrl}";
+                
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+        }
+
         public async Task SaveClientAndSecretConfigurations(string clientId, string clientSecret)
         {
             try
@@ -69,5 +87,7 @@ namespace MLApiServices
                 throw ex;
             }
         }
+
+
     }
 }

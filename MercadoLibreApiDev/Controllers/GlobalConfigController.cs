@@ -45,5 +45,20 @@ namespace MercadoLibreApiDev.Controllers
                 return StatusCode(500, ex.Message);
             }
         }
+
+        [HttpGet("authorize")]
+        public async Task<ActionResult<string>> GetAuthLink()
+        {
+            try
+            {
+                var link= await _service.GetAuthLink("https://localhost:7192/GlobalConfig");
+                return Ok(link);
+            }
+            catch (Exception ex)
+            {
+
+                return StatusCode(500,ex.Message);
+            }
+        }
     }
 }
