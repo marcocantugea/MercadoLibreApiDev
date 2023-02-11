@@ -47,5 +47,27 @@ namespace MLApiServices
                 throw ex;
             }
         }
+
+        public async Task SaveCode(string tcode)
+        {
+            try
+            {
+                if (String.IsNullOrEmpty(tcode)) throw new Exception("invalid code");
+
+                var mlcode = _context.GlobalConfigurations.Where(gc => gc.Name == "ML_CODE").FirstOrDefault();
+
+                if (mlcode == null) throw new Exception("global variable not found");
+
+                mlcode.Value = tcode;
+                mlcode.updated = DateTime.Now; 
+                _context.GlobalConfigurations.Update(mlcode);
+                await _context.SaveChangesAsync();
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+        }
     }
 }

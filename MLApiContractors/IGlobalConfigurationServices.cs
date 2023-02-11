@@ -11,6 +11,6 @@ namespace MLApiContractors
     public interface IGlobalConfigurationServices
     {
         Task SaveClientAndSecretConfigurations(string clientId, string clientSecret);
-
+        Task SaveCode(string tcode);
     }
 }

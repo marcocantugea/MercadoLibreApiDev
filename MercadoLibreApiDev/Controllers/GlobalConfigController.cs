@@ -30,5 +30,20 @@ namespace MercadoLibreApiDev.Controllers
                 return StatusCode(500, ex.Message);
             }
         }
+
+        [HttpGet]
+        public async Task<ActionResult> SaveTCode([FromQuery] string code)
+        {
+            try
+            {
+                await _service.SaveCode(code);
+                return Ok();
+            }
+            catch (Exception ex)
+            {
+
+                return StatusCode(500, ex.Message);
+            }
+        }
     }
 }
