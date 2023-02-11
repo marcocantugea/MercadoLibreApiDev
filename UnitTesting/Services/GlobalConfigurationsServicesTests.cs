@@ -82,5 +82,35 @@ namespace UnitTesting.Services
             _context.SaveChanges();
         }
 
+        [Fact]
+        public async void ShouldSaveTCode_Sucess()
+        {
+            await _service.SaveCode("test");
+            var mlcode= _context.GlobalConfigurations.Where(gc => gc.Name == "ML_CODE").FirstOrDefault();
+            Assert.Equal("test", mlcode.Value);
+        }
+
+        [Fact]
+        public async void ShouldSaveTCode_Fail_EmptyTcode()
+        {
+            var exception = await Assert.ThrowsAsync<Exception>(async () => await _service.SaveCode(string.Empty));
+            Assert.Equal("invalid code", exception.Message);
+        }
+
+        [Fact]
+        public async void ShouldSaveTCode_Fail_NoGlobalVariableFound()
+        {
+            var mlcode = _context.GlobalConfigurations.Where(gc => gc.Name == "ML_CODE").FirstOrDefault();
+            mlcode.Name = "ML_CODE2";
+            _context.Update(mlcode);
+            _context.SaveChanges();
+
+            var exception = await Assert.ThrowsAsync<Exception>(async () => await _service.SaveCode("test"));
+            Assert.Equal("global variable not found", exception.Message);
+
+            mlcode.Name = "ML_CODE";
+            _context.Update(mlcode);
+            _context.SaveChanges();
+        }
     }
 }
