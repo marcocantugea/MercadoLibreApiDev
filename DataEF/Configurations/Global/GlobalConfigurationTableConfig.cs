@@ -50,6 +50,51 @@ namespace DataEF.Configurations.Global
                     Description="Mercado libre code generated",
                     Value=""
                 },
+                new GlobalConfiguration()
+                {
+                    Id = 4,
+                    Name= "ACCESS_TOKEN",
+                    active= true,
+                    created= DateTime.Now,
+                    Description="Mercado libre token generated",
+                    Value=""
+                },
+                new GlobalConfiguration()
+                {
+                    Id = 5,
+                    Name= "ACCESS_TOKEN_EXPIRE",
+                    active= true,
+                    created= DateTime.Now,
+                    Description="Mercado libre token exprire time miliseconds",
+                    Value=""
+                },
+                new GlobalConfiguration()
+                {
+                    Id = 6,
+                    Name= "ACCESS_TOKEN_USERID",
+                    active= true,
+                    created= DateTime.Now,
+                    Description="Mercado libre token user id",
+                    Value=""
+                },
+                new GlobalConfiguration()
+                {
+                    Id = 7,
+                    Name= "REFRESH_TOKEN",
+                    active= true,
+                    created= DateTime.Now,
+                    Description="Mercado libre refresh token",
+                    Value=""
+                },
+                new GlobalConfiguration()
+                {
+                    Id = 8,
+                    Name= "ACCESS_TOKEN_EXPIRE_DATE",
+                    active= true,
+                    created= DateTime.Now,
+                    Description="Mercado libre exprire date",
+                    Value=""
+                },
             };
 
             return data;

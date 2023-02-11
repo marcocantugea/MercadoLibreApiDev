@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Microsoft.Extensions.DependencyInjection;
+using MLApiConnector.Contractors;
+using MLApiConnector.Resources;
 using MLApiContractors;
 
 namespace MLApiServices
@@ -13,7 +15,7 @@ namespace MLApiServices
         public static void ConfigureDIServices(IServiceCollection services) {
             
             services.AddScoped<IGlobalConfigurationServices, GlobalConfigurationsServices>();
-
+            services.AddScoped<IAuthResource,AuthResource>();
         }
     }
 }

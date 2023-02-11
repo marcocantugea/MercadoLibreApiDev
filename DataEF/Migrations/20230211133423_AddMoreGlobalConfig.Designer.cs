@@ -4,6 +4,7 @@ using DataEF.Context;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace DataEF.Migrations
 {
     [DbContext(typeof(MLApiDbContext))]
-    partial class MLApiDbContextModelSnapshot : ModelSnapshot
+    [Migration("20230211133423_AddMoreGlobalConfig")]
+    partial class AddMoreGlobalConfig
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -64,7 +67,7 @@ namespace DataEF.Migrations
                             Name = "CLIENT_ID",
                             Value = "",
                             active = true,
-                            created = new DateTime(2023, 2, 11, 7, 50, 19, 67, DateTimeKind.Local).AddTicks(8176)
+                            created = new DateTime(2023, 2, 11, 7, 34, 23, 516, DateTimeKind.Local).AddTicks(7545)
                         },
                         new
                         {
@@ -73,7 +76,7 @@ namespace DataEF.Migrations
                             Name = "CLIENT_SECRET",
                             Value = "",
                             active = true,
-                            created = new DateTime(2023, 2, 11, 7, 50, 19, 67, DateTimeKind.Local).AddTicks(8209)
+                            created = new DateTime(2023, 2, 11, 7, 34, 23, 516, DateTimeKind.Local).AddTicks(7577)
                         },
                         new
                         {
@@ -82,7 +85,7 @@ namespace DataEF.Migrations
                             Name = "ML_CODE",
                             Value = "",
                             active = true,
-                            created = new DateTime(2023, 2, 11, 7, 50, 19, 67, DateTimeKind.Local).AddTicks(8211)
+                            created = new DateTime(2023, 2, 11, 7, 34, 23, 516, DateTimeKind.Local).AddTicks(7580)
                         },
                         new
                         {
@@ -91,7 +94,7 @@ namespace DataEF.Migrations
                             Name = "ACCESS_TOKEN",
                             Value = "",
                             active = true,
-                            created = new DateTime(2023, 2, 11, 7, 50, 19, 67, DateTimeKind.Local).AddTicks(8213)
+                            created = new DateTime(2023, 2, 11, 7, 34, 23, 516, DateTimeKind.Local).AddTicks(7582)
                         },
                         new
                         {
@@ -100,7 +103,7 @@ namespace DataEF.Migrations
                             Name = "ACCESS_TOKEN_EXPIRE",
                             Value = "",
                             active = true,
-                            created = new DateTime(2023, 2, 11, 7, 50, 19, 67, DateTimeKind.Local).AddTicks(8215)
+                            created = new DateTime(2023, 2, 11, 7, 34, 23, 516, DateTimeKind.Local).AddTicks(7584)
                         },
                         new
                         {
@@ -109,7 +112,7 @@ namespace DataEF.Migrations
                             Name = "ACCESS_TOKEN_USERID",
                             Value = "",
                             active = true,
-                            created = new DateTime(2023, 2, 11, 7, 50, 19, 67, DateTimeKind.Local).AddTicks(8217)
+                            created = new DateTime(2023, 2, 11, 7, 34, 23, 516, DateTimeKind.Local).AddTicks(7587)
                         },
                         new
                         {
@@ -118,16 +121,7 @@ namespace DataEF.Migrations
                             Name = "REFRESH_TOKEN",
                             Value = "",
                             active = true,
-                            created = new DateTime(2023, 2, 11, 7, 50, 19, 67, DateTimeKind.Local).AddTicks(8219)
-                        },
-                        new
-                        {
-                            Id = 8,
-                            Description = "Mercado libre exprire date",
-                            Name = "ACCESS_TOKEN_EXPIRE_DATE",
-                            Value = "",
-                            active = true,
-                            created = new DateTime(2023, 2, 11, 7, 50, 19, 67, DateTimeKind.Local).AddTicks(8221)
+                            created = new DateTime(2023, 2, 11, 7, 34, 23, 516, DateTimeKind.Local).AddTicks(7589)
                         });
                 });
 #pragma warning restore 612, 618
