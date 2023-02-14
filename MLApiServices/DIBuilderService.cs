@@ -16,6 +16,10 @@ namespace MLApiServices
             
             services.AddScoped<IGlobalConfigurationServices, GlobalConfigurationsServices>();
             services.AddScoped<IAuthResource,AuthResource>();
+            services.AddScoped<ISites,Sites>();
+            services.AddScoped<ISiteService, SiteService>();
+            services.AddScoped<IUsers, Users>();
+            services.AddScoped<IUserService, UserService>();
         }
     }
 }
