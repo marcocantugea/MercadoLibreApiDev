@@ -4,6 +4,7 @@ using DataEF.Context;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace DataEF.Migrations
 {
     [DbContext(typeof(MLApiDbContext))]
-    partial class MLApiDbContextModelSnapshot : ModelSnapshot
+    [Migration("20230212000304_AddSitesAndUserTables")]
+    partial class AddSitesAndUserTables
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -64,7 +67,7 @@ namespace DataEF.Migrations
                             Name = "CLIENT_ID",
                             Value = "",
                             active = true,
-                            created = new DateTime(2023, 2, 13, 6, 55, 20, 155, DateTimeKind.Local).AddTicks(1231)
+                            created = new DateTime(2023, 2, 11, 18, 3, 4, 399, DateTimeKind.Local).AddTicks(7705)
                         },
                         new
                         {
@@ -73,7 +76,7 @@ namespace DataEF.Migrations
                             Name = "CLIENT_SECRET",
                             Value = "",
                             active = true,
-                            created = new DateTime(2023, 2, 13, 6, 55, 20, 155, DateTimeKind.Local).AddTicks(1266)
+                            created = new DateTime(2023, 2, 11, 18, 3, 4, 399, DateTimeKind.Local).AddTicks(7743)
                         },
                         new
                         {
@@ -82,7 +85,7 @@ namespace DataEF.Migrations
                             Name = "ML_CODE",
                             Value = "",
                             active = true,
-                            created = new DateTime(2023, 2, 13, 6, 55, 20, 155, DateTimeKind.Local).AddTicks(1269)
+                            created = new DateTime(2023, 2, 11, 18, 3, 4, 399, DateTimeKind.Local).AddTicks(7746)
                         },
                         new
                         {
@@ -91,7 +94,7 @@ namespace DataEF.Migrations
                             Name = "ACCESS_TOKEN",
                             Value = "",
                             active = true,
-                            created = new DateTime(2023, 2, 13, 6, 55, 20, 155, DateTimeKind.Local).AddTicks(1271)
+                            created = new DateTime(2023, 2, 11, 18, 3, 4, 399, DateTimeKind.Local).AddTicks(7748)
                         },
                         new
                         {
@@ -100,7 +103,7 @@ namespace DataEF.Migrations
                             Name = "ACCESS_TOKEN_EXPIRE",
                             Value = "",
                             active = true,
-                            created = new DateTime(2023, 2, 13, 6, 55, 20, 155, DateTimeKind.Local).AddTicks(1273)
+                            created = new DateTime(2023, 2, 11, 18, 3, 4, 399, DateTimeKind.Local).AddTicks(7750)
                         },
                         new
                         {
@@ -109,7 +112,7 @@ namespace DataEF.Migrations
                             Name = "ACCESS_TOKEN_USERID",
                             Value = "",
                             active = true,
-                            created = new DateTime(2023, 2, 13, 6, 55, 20, 155, DateTimeKind.Local).AddTicks(1275)
+                            created = new DateTime(2023, 2, 11, 18, 3, 4, 399, DateTimeKind.Local).AddTicks(7753)
                         },
                         new
                         {
@@ -118,7 +121,7 @@ namespace DataEF.Migrations
                             Name = "REFRESH_TOKEN",
                             Value = "",
                             active = true,
-                            created = new DateTime(2023, 2, 13, 6, 55, 20, 155, DateTimeKind.Local).AddTicks(1277)
+                            created = new DateTime(2023, 2, 11, 18, 3, 4, 399, DateTimeKind.Local).AddTicks(7754)
                         },
                         new
                         {
@@ -127,7 +130,7 @@ namespace DataEF.Migrations
                             Name = "ACCESS_TOKEN_EXPIRE_DATE",
                             Value = "",
                             active = true,
-                            created = new DateTime(2023, 2, 13, 6, 55, 20, 155, DateTimeKind.Local).AddTicks(1279)
+                            created = new DateTime(2023, 2, 11, 18, 3, 4, 399, DateTimeKind.Local).AddTicks(7756)
                         });
                 });
 
@@ -166,9 +169,6 @@ namespace DataEF.Migrations
                         .HasColumnType("int");
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<bool>("IsTestUser")
-                        .HasColumnType("bit");
 
                     b.Property<int>("MLId")
                         .HasColumnType("int");

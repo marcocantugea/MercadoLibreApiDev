@@ -6,7 +6,7 @@ using MLApiServices;
 namespace MercadoLibreApiDev.Controllers
 {
     [ApiController]
-    [Route("[controller]")]
+    [Route("api/[controller]")]
     public class GlobalConfigController : Controller
     {
         private IGlobalConfigurationServices _service;
